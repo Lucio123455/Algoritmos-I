@@ -62,8 +62,17 @@ esMismoIntervalo a b
 
 sumaDistintos :: Integer -> Integer -> Integer -> Integer 
 sumaDistintos a b c 
-    | a /= b && b /= c && c /= a = a + b + c
-    | a == b = c 
-    | b == c = a 
-    | c == a = b
+    | a /= b && b /= c && c /= a    = a + b + c
+    | a == b                        = c 
+    | b == c                        = a 
+    | c == a                        = b
+    | a == b && b == a && c == a    = 0
+
+-- h) esMultiploDe: dados dos n ́umeros naturales, decide si el primero es m ́ultiplo del segundo
+
+esMultiploDe :: Integer -> Integer -> Bool
+esMultiploDe a b 
+    | a <= 0 && b <= 0  = False
+    | a `mod` b == 0    = True 
+    | otherwise         = False
 
