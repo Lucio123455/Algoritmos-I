@@ -1,4 +1,3 @@
-import GHC.Windows (BOOL)
 -- a) absoluto: calcula el valor absoluto de un n ́umero entero.
 
 absoluto :: Integer -> Integer
@@ -45,4 +44,26 @@ ambosSonCero a b
 ambosSonCeroPL :: Rational -> Rational -> Bool
 ambosSonCeroPL 0 0 = True  -- Caso donde ambos son 0
 ambosSonCeroPL _ _ = False -- Cualquier otro caso
+
+-- f) enMismoIntervalo: dados dos n ́umeros reales, indica si est ́an relacionados 
+-- por la relacion de equivalencia en R cuyas
+-- clases de equivalencia son: (−∞, 3], (3, 7] y (7, ∞), 
+-- o dicho de otra manera, si pertenecen al mismo intervalo
+
+esMismoIntervalo :: Rational -> Rational -> Bool
+esMismoIntervalo a b 
+    | a <= 3 && b <= 3                          = True
+    | (a > 3 && a <= 7) && (b > 3 && b <= 7)    = True
+    | a > 7 && b > 7                            = True
+    | otherwise                                 = False 
+
+-- g) sumaDistintos: 
+-- que dados tres n ́umeros enteros calcule la suma sin sumar repetidos (si los hubiera)
+
+sumaDistintos :: Integer -> Integer -> Integer -> Integer 
+sumaDistintos a b c 
+    | a /= b && b /= c && c /= a = a + b + c
+    | a == b = c 
+    | b == c = a 
+    | c == a = b
 
