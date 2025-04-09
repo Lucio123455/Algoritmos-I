@@ -14,8 +14,8 @@ esParMenor (x1, y1) (x2, y2)
 
 -- c) distancia: calcula la distancia euclıdea entre dos puntos de R2
 
-distancia :: (Rational, Rational) -> (Rational, Rational) -> Bool
-distancia (x1, y1) (x2, y2) = sqrt ((x2 - x1)^2 + (y2 - y1)^2)
+--distancia :: (Rational, Rational) -> (Rational, Rational) -> Bool
+--distancia (x1, y1) (x2, y2) = sqrt ((x2 - x1)^2 + (y2 - y1)^2)
 
 -- e) sumarSoloMultiplos: dada una terna de numeros enteros y un natural, 
 -- calcula la suma de los elementos de la terna que
@@ -56,9 +56,9 @@ esPar a
 
 posPrimerPar :: (Integer, Integer, Integer) -> Integer
 posPrimerPar (x1, x2, x3) 
-    | esPar x1  = 0
-    | esPar x2  = 1
-    | esPar x3  = 2
+    | esPar x1  = 1
+    | esPar x2  = 2
+    | esPar x3  = 3
     | otherwise = 4
 
 -- g) crearPar :: a -> b -> (a, b): a partir de dos componentes, 
@@ -77,3 +77,9 @@ invertir (a, b) = (b, a)
 -- ) Reescribir los ejercicios productoInterno, 
 --esParMenor y distancia usando el siguiente renombre de tipos:
 --type Punto2D = (Float, Float)
+
+type Punto2D = (Float, Float) 
+
+todoMenor :: Punto2D -> Punto2D -> Bool
+todoMenor t1 t2 = (fst t1 < fst t2) && (snd t1 < snd t2)
+
