@@ -76,3 +76,12 @@ esMultiploDe a b
     | a `mod` b == 0    = True 
     | otherwise         = False
 
+-- i) digitoUnidades: dado un n ́umero entero, extrae su dıgito de las unidades
+
+digitoUnidades :: Integer -> Integer
+digitoUnidades a = a `mod` 10
+
+
+-- j) digitoDecenas: dado un n ́umero entero mayor a 9, extrae su d ́ıgito de las decenas.
+digitoDecenas :: Integer -> Integer
+digitoDecenas n = (n `div` 10) `mod` 10
