@@ -51,7 +51,7 @@ sumaTerna (x1, x2, x3) = x1 + x2 + x3
 
 esPar :: Integer -> Bool 
 esPar a 
-    | a `mod` 2 == 0    = True
+    | a mod 2 == 0    = True
     | otherwise         = False
 
 posPrimerPar :: (Integer, Integer, Integer) -> Integer
