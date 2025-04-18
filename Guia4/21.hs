@@ -4,5 +4,15 @@
 --pitagoras 3 4 2 ⇝ 6
 
 pitagoras :: Integer -> Integer -> Integer -> Integer
-pitagoras m n r 
-    | 
+pitagoras m n r = for n m r
+    
+for :: Integer -> Integer -> Integer -> Integer 
+for n m r 
+    | n < 0 = 0
+    | otherwise  =  calculo n m r + for (n - 1) m r
+
+calculo :: Integer -> Integer -> Integer -> Integer
+calculo n m r 
+    | m < 0 = 0
+    | n ^ 2 + m ^ 2 <= r ^ 2 = 1 + calculo n (m - 1) r
+    | otherwise = calculo n (m - 1) r

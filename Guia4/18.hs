@@ -1,17 +1,17 @@
-mayorDigito :: Integer -> Integer
-mayorDigito n
-    | n < 10    = n
-    | not (esPar n) =  
-    | otherwise = mayorDigitoEntre (mod n 10) (mayorDigito (div n 10))
+mayorDigitoPar :: Integer -> Integer 
+mayorDigitoPar n = calcularMayorDigito n (-1)
 
-mayorDigitoEntre :: Integer -> Integer -> Integer
-mayorDigitoEntre a b
-    | a > b     = a
-    | otherwise = b
+calcularMayorDigitoPar :: Integer -> Integer -> Integer
+calcularMayorDigitoPar n mayor
+  | n == 0 = mayor
+  | ult n > mayor && esPar (ult n) = calcularMayorDigito (quitarUlt n) (ult n)
+  | otherwise     = calcularMayorDigito (quitarUlt n) mayor
 
+ult :: Integer -> Integer
+ult n = mod n 10
 
+quitarUlt :: Integer -> Integer
+quitarUlt n = div n 10
 
 esPar :: Integer -> Bool 
-esPar n 
-    | mod n 2 == 0 = True
-    | otherwise = False
+esPar n = mod n 2 == 0
