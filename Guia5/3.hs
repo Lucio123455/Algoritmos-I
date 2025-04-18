@@ -1,0 +1,1 @@
+principio :: [t] -> [t]
