@@ -82,5 +82,9 @@ tiene 8 porciones y que se prefiere que sobren porciones.
 """
 
 def cantidad_de_pizzas(comensales: int, min_cant_de_porciones: int) -> int:
-    porciones = 8 
-    
+    pizza = 8 
+    porciones_totales = comensales * min_cant_de_porciones
+    return math.ceil(porciones_totales / pizza)
+
+print(cantidad_de_pizzas(4,9))
+
