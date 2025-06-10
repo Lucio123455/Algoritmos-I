@@ -72,7 +72,7 @@ imprima la frase que corresponda según el caso:
 
 """
 
-def jub_vacaciones(sexo: str, edad:int) -> str:
+def jub_vacaciones(sexo: str, edad:int) -> None:
     if edad < 18 or edad >= 65 or (sexo == 'F' and edad >= 60):
         print("anda de vacaciones")
     else: 
